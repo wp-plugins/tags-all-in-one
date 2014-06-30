@@ -1,7 +1,7 @@
 === Tags all in one ===
 Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
-Tags: tags, tag cloud, tags cloud, tags list, tags widget
+Tags: tags, tag cloud, tags cloud, tags list
 Requires at least: 3.6
 Tested up to: 3.9.1
 Stable tag: 3.6
@@ -12,11 +12,16 @@ Display the tag cloud for selected post type (taxonomy).
 
 == Description ==
 
-"Tags all in one" is a widget that allow you to display the tag cloud for selected post type (taxonomy).
-Available translations: English, Polish
+**Tags all in one** is a widget that allow you to display the tags cloud for selected post type (taxonomy).
+
+= Now available in the following Languages = 
+
+* English (en_EN)
+* Polish (pl_PL)
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
 I will be grateful for opinions and reviews.
+
 == Translations: ==
 
 * English - by Marcin Gierada
@@ -29,7 +34,7 @@ I will be grateful for opinions and reviews.
 3. Activate Woocommerce Product Flexslide all in one in the "Plugins" using the "Activate" link.
 
 == Frequently Asked Questions ==
-If you've got any questions, don't hesitate to ask.
+If you've got any questions, don't hesitate to ask/
 
 == Screenshots ==
 1. Widget configuration
@@ -41,5 +46,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.0 =
 Initial release
