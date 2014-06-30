@@ -20,6 +20,7 @@ Display the tag cloud for selected post type (taxonomy).
 * Polish (pl_PL)
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
+
 I will be grateful for opinions and reviews.
 
 == Translations: ==
