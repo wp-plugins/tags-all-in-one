@@ -33,7 +33,7 @@ For more information, check out module page at [Teastudio.pl](http://www.teastud
 not yet
 
 == Screenshots ==
-1. screenshot-1.png - widget view
+1. Widget configuration
 
 
 == Changelog ==
