@@ -8,11 +8,11 @@ Stable tag: 3.6
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Display tags for checked post types
+Display tags for selected post types
 
 == Description ==
 
-[Tags all in one](http://www.teastudio.pl/produkt/tags-all-in-one/} allow to display custom tagcloud of checked post type (taxonomy).
+[Tags all in one](http://www.teastudio.pl/produkt/tags-all-in-one/} allow to display custom tagcloud of selected post type (taxonomy).
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl).
 
