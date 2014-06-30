@@ -29,7 +29,7 @@ I will be grateful for opinions and reviews.
 3. Activate Woocommerce Product Flexslide all in one in the "Plugins" using the "Activate" link.
 
 == Frequently Asked Questions ==
-not yet
+If you've got any questions, don't hesitate to ask.
 
 == Screenshots ==
 1. Widget configuration
