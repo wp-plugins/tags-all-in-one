@@ -12,9 +12,12 @@ Display the tag cloud for selected post type (taxonomy).
 
 == Description ==
 
-"Tags all in one" is a plugin that allow you to display the tag cloud for selected post type (taxonomy).
+**Tags all in one** is a plugin that allow you to display the tag cloud for selected post type (taxonomy).
 
-Available translations: English, Polish.
+= Now available in the following Languages = 
+
+* English (en_EN)
+* Polish (pl_PL)
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
 
