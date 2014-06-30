@@ -13,9 +13,11 @@ Display the tag cloud for selected post type (taxonomy).
 == Description ==
 
 "Tags all in one" is a plugin that allow you to display the tag cloud for selected post type (taxonomy).
-Available translations: English, Polish
+
+Available translations: English, Polish.
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
+
 I will be grateful for opinions and reviews.
 == Translations: ==
 
@@ -29,7 +31,7 @@ I will be grateful for opinions and reviews.
 3. Activate Woocommerce Product Flexslide all in one in the "Plugins" using the "Activate" link.
 
 == Frequently Asked Questions ==
-not yet
+Do not hesitate to ask any questions.
 
 == Screenshots ==
 1. Widget configuration
