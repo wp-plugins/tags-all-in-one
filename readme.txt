@@ -12,9 +12,9 @@ Display tags for selected post types
 
 == Description ==
 
-[Tags all in one](http://www.teastudio.pl/produkt/tags-all-in-one/} allow to display custom tagcloud of selected post type (taxonomy).
+"Tags all in one" plugin allow to display custom tagcloud of selected post type (taxonomy).
 
-For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl).
+For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
 
 == Translations: ==
 
@@ -33,7 +33,7 @@ For more information, check out module page at [Teastudio.pl](http://www.teastud
 not yet
 
 == Screenshots ==
-1. screenshot.png - widget view
+1. screenshot-1.png - widget view
 
 
 == Changelog ==
