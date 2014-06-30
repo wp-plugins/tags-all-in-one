@@ -1,7 +1,7 @@
 === Tags all in one ===
 Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
-Tags: tags, tagcloud
+Tags: tags, tagcloud, tag cloud
 Requires at least: 3.6
 Tested up to: 3.6
 Stable tag: 3.6
@@ -42,3 +42,6 @@ not yet
 Initial release
 
 == Upgrade Notice ==
+
+= 1.0 =
+Initial release
