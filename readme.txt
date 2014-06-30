@@ -3,7 +3,7 @@ Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
 Tags: tags, tagcloud, tag cloud
 Requires at least: 3.6
-Tested up to: 3.9.1
+Tested up to: 3.6
 Stable tag: 3.6
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
