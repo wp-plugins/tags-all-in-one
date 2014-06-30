@@ -6,16 +6,9 @@ Description: Display tags for selected post types
 Version: 1.0.0
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
-Author Email: info@teastudio.pl
-License: MIT License
-License URI: http://opensource.org/licenses/MIT
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the MIT License.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Author Email: m.gierada@teastudio.pl
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 global $wpdb;
