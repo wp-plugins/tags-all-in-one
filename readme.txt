@@ -8,11 +8,11 @@ Stable tag: 3.6
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Display tags for selected post types
+Display the tag cloud for selected post type (taxonomy).
 
 == Description ==
 
-"Tags all in one" plugin allow to display custom tagcloud of selected post type (taxonomy).
+[Tags all in one] is a plugin that allow you to display the tag cloud for selected post type (taxonomy).
 
 For more information, check out module page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
 
