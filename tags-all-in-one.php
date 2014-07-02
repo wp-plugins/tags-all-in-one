@@ -9,16 +9,23 @@ Author URI: http://www.teastudio.pl/
 Author Email: m.gierada@teastudio.pl
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2 as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 */
 
-global $wpdb;
 
 /*
  * plugin
  */
 add_action('init', 'tags_all_in_one_action_init');
-function tags_all_in_one_action_init()
-{
+function tags_all_in_one_action_init() {
     load_plugin_textdomain('tags-all-in-one', false, dirname(plugin_basename( __FILE__ )) .  '/i18n/languages/');
 }
 
@@ -35,8 +42,6 @@ class TagsAllInOneWidget extends WP_Widget
     }
 
     function widget( $args, $instance ) {
-        global $wpdb, $table_prefix;
-
         extract( $args );
 
         $title = apply_filters('widget_title', $instance['title']);
@@ -54,18 +59,15 @@ class TagsAllInOneWidget extends WP_Widget
         return $new_instance;        
     }   
        
-    function generate($instance)
-    {
+    function generate($instance) {
         $expected = array('smallest', 'largest', 'unit', 'number', 'order', 'taxonomy');
         $args = array();
         
-        foreach($instance as $k => $v)
-        {
+        foreach($instance as $k => $v) {
             /*
              * check if this value can be used in wp_tag_cloud
              */
-            if(in_array($k, $expected) && $v != "")
-            {
+            if(in_array($k, $expected) && $v != "") {
                 $args[$k] = $v;
             }            
         }

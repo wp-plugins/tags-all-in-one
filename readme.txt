@@ -4,7 +4,6 @@ Donate link: http://www.teastudio.pl/
 Tags: tags, tag cloud, tags cloud, tags list
 Requires at least: 3.6
 Tested up to: 3.9.1
-Stable tag: 3.6
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
