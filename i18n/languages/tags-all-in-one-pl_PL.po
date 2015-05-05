@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Tags All in One v1.0.0\n"
+"Project-Id-Version: Tags all in one v1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-02-08 21:30:25+0000\n"
@@ -27,7 +27,7 @@ msgstr "Wyświetla tagi dla wybranych typów postów"
 
 #: tags-all-in-one.php:32
 #@ tags-all-in-one
-msgid "Tags All in One"
+msgid "Tags all in one"
 msgstr ""
 
 #: tags-all-in-one.php:85

@@ -3,11 +3,11 @@ Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
 Tags: tags, tag cloud, tags cloud, tags list
 Requires at least: 3.6
-Tested up to: 3.9.1
-License: MIT License
-License URI: http://opensource.org/licenses/MIT
+Tested up to: 4.1.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display the tag cloud for selected post type (taxonomy).
+Displays the tags cloud for selected post type (taxonomy).
 
 == Description ==
 
@@ -18,7 +18,7 @@ Display the tag cloud for selected post type (taxonomy).
 * English (en_EN)
 * Polish (pl_PL)
 
-For more information, check out plugin page at [Teastudio.pl](http://www.teastudio.pl/produkt/tags-all-in-one/).
+For more information, check out plugin page at [Teastudio.pl](http://www.teastudio.pl/product/tags-all-in-one/).
 I will be grateful for opinions and reviews.
 
 == Translations: ==
@@ -33,13 +33,15 @@ I will be grateful for opinions and reviews.
 3. Activate Woocommerce Product Flexslide all in one in the "Plugins" using the "Activate" link.
 
 == Frequently Asked Questions ==
-If you've got any questions, don't hesitate to ask/
+If you've got any questions, don't hesitate to ask.
 
 == Screenshots ==
 1. Widget configuration
 
 == Changelog ==
 
+= 1.0.1 =
+Code formatting and some small changes in plugin description
 = 1.0.0 =
 Initial release
 
