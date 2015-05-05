@@ -11,7 +11,7 @@ Displays the tags cloud for selected post type (taxonomy).
 
 == Description ==
 
-**Tags all in one** is a widget that allow you to display the tags cloud for selected post type (taxonomy).
+**Tags all in one** widget, allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget, you can easily determine the amount of the displayed items, font size and the display order.
 
 = Now available in the following Languages = 
 
@@ -30,7 +30,7 @@ I will be grateful for opinions and reviews.
 
 1. Upload plugin either via the your's Wordpress installation, or by uploading to the /wp-content/plugins/ by FTP client
 2. Install the plugin through the 'Plugins' menu in WordPress.
-3. Activate Woocommerce Product Flexslide all in one in the "Plugins" using the "Activate" link.
+3. Activate "Tags all in one" in the "Plugins" using the "Activate" link.
 
 == Frequently Asked Questions ==
 If you've got any questions, don't hesitate to ask.
