@@ -42,6 +42,7 @@ If you've got any questions, don't hesitate to ask.
 
 == Screenshots ==
 1. Widget configuration
+2. Example of usage
 
 == Changelog ==
 
