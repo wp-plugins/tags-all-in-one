@@ -1,7 +1,7 @@
 === Tags all in one ===
 Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
-Tags: tags, tag cloud, tags cloud, tags list
+Tags: tags, tag cloud, tags cloud, tags list, custom post types tags cloud
 Requires at least: 3.6
 Tested up to: 4.1.1
 License: GPLv2 or later
@@ -11,14 +11,19 @@ Displays the tags cloud for selected post type (taxonomy).
 
 == Description ==
 
-**Tags all in one** widget, allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget, you can easily determine the amount of the displayed items, font size and the display order.
+**Tags all in one** is a widget that allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget, you can easily determine the amount of the displayed items, font size and the display order.
 
-= Now available in the following Languages = 
+= Now available in the following Languages: = 
 
 * English (en_EN)
 * Polish (pl_PL)
 
-For more information, check out plugin page at [Teastudio.pl](http://www.teastudio.pl/product/tags-all-in-one/).
+For more information, check out [PLUGIN HOMEPAGE](http://www.teastudio.pl/en/product/tags-all-in-one/).
+
+= DEMO =
+You can see the plugin in action on [DEMO PAGE](http://wordpress.teastudio.pl/category/tags-all-in-one/)
+
+
 I will be grateful for opinions and reviews.
 
 == Translations: ==
