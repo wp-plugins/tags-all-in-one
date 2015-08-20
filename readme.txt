@@ -1,17 +1,17 @@
 === Tags all in one ===
 Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
-Tags: tags, tag cloud, tags cloud, tags list, custom post types tags cloud, taxonomies tags cloud
+Tags: tags, tag cloud, tag clouds, tag list, custom post types tag clouds, taxonomies tag clouds
 Requires at least: 3.6
 Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Displays the tags cloud for selected post or post type (taxonomies).
+Displays the tag clouds for selected post or post type (taxonomies).
 
 == Description ==
 
-**Tags all in one** is a widget and a shortcode generator that allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget and shortcode generator, you can easily determine the amount of the displayed items, font size and the display order.
+**Tags all in one** is a widget and a shortcode generator that allows you to present the tag clouds of the selected post types into Wordpress. With the help of the widget and shortcode generator, you can easily determine the amount of the displayed items, font size and the display order.
 
 = Now available in the following Languages: = 
 

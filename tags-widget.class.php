@@ -2,7 +2,7 @@
 /*
 Plugin Name: Tags all in one
 Plugin URI: http://www.teastudio.pl/produkt/tags-all-in-one/
-Description: Displays the tags cloud for selected post type (taxonomies)
+Description: Displays the tag clouds for selected post type (taxonomies)
 Version: 1.0.2
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
