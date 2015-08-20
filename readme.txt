@@ -1,17 +1,17 @@
 === Tags all in one ===
 Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
-Tags: tags, tag cloud, tags cloud, tags list, custom post types tags cloud
+Tags: tags, tag cloud, tags cloud, tags list, custom post types tags cloud, taxonomies tags cloud
 Requires at least: 3.6
 Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Displays the tags cloud for selected post type (taxonomy).
+Displays the tags cloud for selected post or post type (taxonomies).
 
 == Description ==
 
-**Tags all in one** is a widget that allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget, you can easily determine the amount of the displayed items, font size and the display order.
+**Tags all in one** is a widget and a shortcode generator that allows you to present the tag cloud of the selected post types into Wordpress. With the help of the widget and shortcode generator, you can easily determine the amount of the displayed items, font size and the display order.
 
 = Now available in the following Languages: = 
 
@@ -33,7 +33,7 @@ I will be grateful for opinions and reviews.
 
 == Installation ==
 
-1. Upload plugin either via the your's Wordpress installation, or by uploading to the /wp-content/plugins/ by FTP client
+1. Upload plugin either via the yours Wordpress installation, or by uploading to the /wp-content/plugins/ by FTP client
 2. Install the plugin through the 'Plugins' menu in WordPress.
 3. Activate "Tags all in one" in the "Plugins" using the "Activate" link.
 
@@ -42,16 +42,25 @@ If you've got any questions, don't hesitate to ask.
 
 == Screenshots ==
 1. Widget configuration
-2. Example of usage
+2. Shortcode generator
+3. WYSIWYG button
 
 == Changelog ==
 
+= 1.0.2 =
+* added option to set separator
+* added shortcode generator for inserting tags cloud into post content
+* added option to display tags from current post in shortcode geneator
 = 1.0.1 =
-Code formatting and some small changes in plugin description
+* Code formatting and some small changes in plugin description
 = 1.0.0 =
-Initial release
+* Initial release
 
 == Upgrade Notice ==
 
+= 1.0.2 =
+* added new features, please update yours widgets
+= 1.0.1 =
+* Code formatting and some small changes in plugin description
 = 1.0.0 =
 Initial release

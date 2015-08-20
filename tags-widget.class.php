@@ -2,8 +2,8 @@
 /*
 Plugin Name: Tags all in one
 Plugin URI: http://www.teastudio.pl/produkt/tags-all-in-one/
-Description: Display tags cloud for selected post types
-Version: 1.0.1
+Description: Displays the tags cloud for selected post type (taxonomies)
+Version: 1.0.2
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
 Author Email: m.gierada@teastudio.pl
@@ -42,47 +42,32 @@ class TagsAllInOneWidget extends WP_Widget
         }
 
         function widget( $args, $instance ) {
-                extract( $args );
-
                 $title = apply_filters('widget_title', $instance['title']);
 
-                echo $before_widget;
+                echo $args['before_widget'];
 
-                if ( $title ) {
-                    echo $before_title . $title . $after_title;
+                if ($title) {
+                        echo $args['before_title'] . $title . $args['after_title'];
                 }
 
-                echo $this->generate($instance);
-                echo $after_widget;
+                echo TagsAllInOneGenerator::generate($instance);
+                echo $args['after_widget'];
          }
 
         function update ($new_instance, $old_instance) {
                 return $new_instance;        
         }   
-       
-        function generate($instance) {
-                $expected = array('smallest', 'largest', 'unit', 'number', 'order', 'taxonomy');
-                $args = array();
 
-                foreach ($instance as $k => $v) {
-                        /*
-                         * check if this value can be used in wp_tag_cloud
-                         */
-                        if(in_array($k, $expected) && $v != "") {
-                                $args[$k] = $v;
-                        }            
-                }
-
-                echo "<div class=\"tagcloud\">";
-                wp_tag_cloud($args);
-                echo "</div>";
-        }
-    
 /**
  * The configuration form.
  */
 function form($instance) { 
-    $taxanomies = get_taxonomies(array('show_tagcloud' => true), 'objects');
+        /*
+         * load defaults if new
+         */
+        if(empty($instance)) {
+                $instance = TagsAllInOneGenerator::getDefaults();
+        }   
 ?>
     <p>
         <label for="<?php echo $this->get_field_id("title"); ?>"><?php _e('Title'); ?>:</label>        
@@ -94,23 +79,21 @@ function form($instance) {
         <input id="<?php echo $this->get_field_id("number"); ?>" name="<?php echo $this->get_field_name("number"); ?>" type="text" size="5" value="<?php echo esc_attr(array_key_exists('number', $instance) ? $instance["number"] : ''); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id("largest"); ?>"><?php _e('Largest font size', 'tags-all-in-one'); ?>:</label>
-        <br />
-        <input id="<?php echo $this->get_field_id("largest"); ?>" name="<?php echo $this->get_field_name("largest"); ?>" type="text" size="5" value="<?php echo esc_attr(array_key_exists('largest', $instance) ? $instance["largest"] : ''); ?>" />
-    </p> 
-    <p>
         <label for="<?php echo $this->get_field_id("smallest"); ?>"><?php _e('Smallest font size', 'tags-all-in-one'); ?>:</label>
         <br />
         <input id="<?php echo $this->get_field_id("smallest"); ?>" name="<?php echo $this->get_field_name("smallest"); ?>" type="text" size="5" value="<?php echo esc_attr(array_key_exists('smallest', $instance) ? $instance["smallest"] : ''); ?>" />
+    </p>     
+    <p>
+        <label for="<?php echo $this->get_field_id("largest"); ?>"><?php _e('Largest font size', 'tags-all-in-one'); ?>:</label>
+        <br />
+        <input id="<?php echo $this->get_field_id("largest"); ?>" name="<?php echo $this->get_field_name("largest"); ?>" type="text" size="5" value="<?php echo esc_attr(array_key_exists('largest', $instance) ? $instance["largest"] : ''); ?>" />
     </p>  
     <p>
         <label for="<?php echo $this->get_field_id("unit"); ?>"><?php _e('Unit of font size', 'tags-all-in-one'); ?>:</label>
         <br />
         <select name="<?php echo $this->get_field_name("unit"); ?>" id="<?php echo $this->get_field_id("unit"); ?>" class="select">
           <?php            
-                $unit_list = array('px' => 'px',
-                                   'pt' => 'pt'
-                                  );
+                $unit_list = Tags_All_In_One_Utils::getUnits();
                 foreach($unit_list as $key => $list) {
                         echo "<option value=\"". $key ."\" ". (esc_attr($instance["unit"]) == $key ? 'selected="selected"' : null) .">". $list ."</option>";
                 }
@@ -118,35 +101,52 @@ function form($instance) {
         </select>
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id("order"); ?>"><?php _e('Ordering', 'tags-all-in-one'); ?>:</label>
+        <label for="<?php echo $this->get_field_id("separator"); ?>"><?php _e('Separator', 'tags-all-in-one'); ?>:</label>
+        <br />
+        <input id="<?php echo $this->get_field_id("separator"); ?>" name="<?php echo $this->get_field_name("separator"); ?>" type="text" size="5" value="<?php echo esc_attr(array_key_exists('separator', $instance) ? $instance["separator"] : ''); ?>" />
+    </p>    
+    <p>
+        <label for="<?php echo $this->get_field_id("orderby"); ?>"><?php _e('Order by', 'tags-all-in-one'); ?>:</label>
+        <br />
+        <select name="<?php echo $this->get_field_name("orderby"); ?>" id="<?php echo $this->get_field_id("orderby"); ?>" class="select">
+          <?php            
+                $orderby_list = Tags_All_In_One_Utils::getOrdersBy();
+                foreach($orderby_list as $key => $list) {
+                        echo "<option value=\"". $key ."\" ". (esc_attr($instance["orderby"]) == $key ? 'selected="selected"' : null) .">". $list ."</option>";
+                }
+          ?>
+        </select>
+    </p>       
+    <p>
+        <label for="<?php echo $this->get_field_id("order"); ?>"><?php _e('Order', 'tags-all-in-one'); ?>:</label>
         <br />
         <select name="<?php echo $this->get_field_name("order"); ?>" id="<?php echo $this->get_field_id("order"); ?>" class="select">
           <?php            
-                $ordering_list = array('asc' => __("Ascending", 'tags-all-in-one'),
-                                       'desc' => __("Descending", 'tags-all-in-one')
-                                      );
-                foreach($ordering_list as $key => $list) {
+                $order_list = Tags_All_In_One_Utils::getOrders();
+                foreach($order_list as $key => $list) {
                         echo "<option value=\"". $key ."\" ". (esc_attr($instance["order"]) == $key ? 'selected="selected"' : null) .">". $list ."</option>";
                 }
           ?>
         </select>
-    </p>      
+    </p>    
+    
     <p>
-        <label for="<?php echo $this->get_field_id("taxonomy"); ?>"><?php _e('Taxonomy', 'tags-all-in-one'); ?>:</label>
+        <label for="<?php echo $this->get_field_id("taxonomy"); ?>"><?php _e('Tags from', 'tags-all-in-one'); ?>:</label>
         <br />
         <ul>
-            <?php              
-                foreach($taxanomies as $key => $type) {
+            <?php   
+                $taxanomies_list = Tags_All_In_One_Utils::getTaxonomies();
+                foreach($taxanomies_list as $key => $type) {
                         echo "<li>";
 
                         if(array_key_exists('taxonomy', $instance)) {
-                            $checked = array_key_exists( $key, $instance["taxonomy"] ) ? 'checked="checked"' : null;
+                            $checked = ( (is_array($instance['taxonomy']) && array_key_exists($key,$instance['taxonomy'])) || ($key === $instance['taxonomy']) ) ? 'checked="checked"' : null;
                         } else {
                             $checked = null;
                         }
 
                         echo "<input type=\"checkbox\" value=\"". $key ."\" id=\"tag-". $key ."\" ". $checked ." name=\"". $this->get_field_name('taxonomy') ."[". $key ."]\" />";
-                        echo "<label for=\"tag-". $key ."\">". $type->label ."</label>";
+                        echo "<label for=\"tag-". $key ."\">". $type ."</label>";
                         echo "</li>";
                 }
             ?>
