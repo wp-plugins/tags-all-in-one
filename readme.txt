@@ -47,6 +47,8 @@ If you've got any questions, don't hesitate to ask.
 
 == Changelog ==
 
+= 1.0.3 =
+* fixed loading class error
 = 1.0.2 =
 * added option to set separator
 * added shortcode generator for inserting tags cloud into post content
@@ -57,10 +59,3 @@ If you've got any questions, don't hesitate to ask.
 * Initial release
 
 == Upgrade Notice ==
-
-= 1.0.2 =
-* added new features, please update yours widgets
-= 1.0.1 =
-* Code formatting and some small changes in plugin description
-= 1.0.0 =
-Initial release

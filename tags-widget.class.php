@@ -1,33 +1,11 @@
 <?php
 /*
-Plugin Name: Tags all in one
-Plugin URI: http://www.teastudio.pl/produkt/tags-all-in-one/
-Description: Displays the tag clouds for selected post type (taxonomies)
-Version: 1.0.2
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
 Author Email: m.gierada@teastudio.pl
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License version 2 as published by
-the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
 */
-
-
-/*
- * plugin
- */
-add_action('init', 'tags_all_in_one_action_init');
-function tags_all_in_one_action_init() {
-        load_plugin_textdomain('tags-all-in-one', false, dirname(plugin_basename( __FILE__ )) .  '/i18n/languages/');
-}
 
 
 /*
@@ -36,7 +14,7 @@ function tags_all_in_one_action_init() {
 class TagsAllInOneWidget extends WP_Widget 
 {
 
-        function tagsAllInOneWidget() {
+        function TagsAllInOneWidget() {
                 $widget_ops = array('classname' => 'widget_tags_all_in_one','description' => __('Display tags for checked post types', 'tags-all-in-one'));
                 $this->WP_Widget('widget_tags_all_in_one', __('Tags all in one', 'tags-all-in-one'), $widget_ops);
         }

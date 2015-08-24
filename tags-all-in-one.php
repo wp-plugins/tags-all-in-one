@@ -3,7 +3,7 @@
 Plugin Name: Tags all in one
 Plugin URI: http://www.teastudio.pl/produkt/tags-all-in-one/
 Description: Display tags cloud for selected post types by widget or display tags cloud for current post by shortcode generator.
-Version: 1.0.2
+Version: 1.0.3
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
 Author Email: m.gierada@teastudio.pl
@@ -34,7 +34,7 @@ function tags_all_in_one_init() {
  */
 $tags_All_In_One = new Tags_All_In_One();
 class Tags_All_In_One {
-        const VERSION = '1.0.2';
+        const VERSION = '1.0.3';
         private $plugin_name = 'Tags all in one';
         private $plugin_slug = 'tags-all-in-one';
         private $options = array();
