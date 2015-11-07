@@ -7,10 +7,10 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-class TagsAllInOneShortcodeDecode {	
-        public function initialize($atts, $content = null, $code = "") {	
-                return TagsAllInOneGenerator::generate($atts);
-        }
+class TagsAllInOneShortcodeDecode {
+    public static function initialize($atts, $content = null, $code = "") {
+        return TagsAllInOneGenerator::generate($atts);
+    }
 }
 add_shortcode("tags_all_in_one", array("TagsAllInOneShortcodeDecode", "initialize"));
 ?>

@@ -3,7 +3,7 @@ Contributors: teastudio.pl
 Donate link: http://www.teastudio.pl/
 Tags: tags, tag cloud, tag clouds, tag list, custom post types tag clouds, taxonomies tag clouds
 Requires at least: 3.6
-Tested up to: 4.2
+Tested up to: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,10 +13,15 @@ Displays the tag clouds for selected post or post type (taxonomies).
 
 **Tags all in one** is a widget and a shortcode generator that allows you to present the tag clouds of the selected post types into Wordpress. With the help of the widget and shortcode generator, you can easily determine the amount of the displayed items, font size and the display order.
 
-= Now available in the following Languages: = 
+= Now available in the following Languages: =
 
 * English (en_EN)
 * Polish (pl_PL)
+
+
+If you need other translation or you would like to create some, please visit [crowdin.com](https://crowdin.com/project/tags-all-in-one) project page.
+
+
 
 For more information, check out [PLUGIN HOMEPAGE](http://www.teastudio.pl/en/product/tags-all-in-one/).
 
@@ -46,15 +51,20 @@ If you've got any questions, don't hesitate to ask.
 3. WYSIWYG button
 
 == Changelog ==
+= 1.0.4 =
+* improved WordPress 4.3 capatible
 
 = 1.0.3 =
 * fixed loading class error
+
 = 1.0.2 =
 * added option to set separator
 * added shortcode generator for inserting tags cloud into post content
 * added option to display tags from current post in shortcode geneator
+
 = 1.0.1 =
 * Code formatting and some small changes in plugin description
+
 = 1.0.0 =
 * Initial release
 

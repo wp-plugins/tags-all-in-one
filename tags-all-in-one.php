@@ -3,7 +3,7 @@
 Plugin Name: Tags all in one
 Plugin URI: http://www.teastudio.pl/produkt/tags-all-in-one/
 Description: Display tags cloud for selected post types by widget or display tags cloud for current post by shortcode generator.
-Version: 1.0.3
+Version: 1.0.4
 Author: Marcin Gierada
 Author URI: http://www.teastudio.pl/
 Author Email: m.gierada@teastudio.pl
@@ -34,112 +34,112 @@ function tags_all_in_one_init() {
  */
 $tags_All_In_One = new Tags_All_In_One();
 class Tags_All_In_One {
-        const VERSION = '1.0.3';
-        private $plugin_name = 'Tags all in one';
-        private $plugin_slug = 'tags-all-in-one';
-        private $options = array();
-        
+    const VERSION = '1.0.4';
+    private $plugin_name = 'Tags all in one';
+    private $plugin_slug = 'tags-all-in-one';
+    private $options = array();
+
 	public function __construct() {
-                /*
-                 * get options
-                 */
-                $this->options = array_merge( $this->get_defaults(), get_option($this->plugin_slug . '_options') ? get_option($this->plugin_slug . '_options') : array() );
-                
-                /*
-                 * include utils
-                 */
-                require_once("includes/utils.class.php");                
+        /*
+         * get options
+         */
+        $this->options = array_merge( $this->get_defaults(), get_option($this->plugin_slug . '_options') ? get_option($this->plugin_slug . '_options') : array() );
 
-                //include required files based on admin or site
-                if (is_admin()) {   
-                        /*
-                        * activate plugin
-                        */                            
-                        add_action( 'init', array($this, 'tags_all_in_one_button') );	 
-                        add_action( 'admin_head', array($this, 'tags_all_in_one_button') );     
+        /*
+         * include utils
+         */
+        require_once("includes/utils.class.php");
 
-                        /*
-                         * ajax page for shortcode generator
-                         */
-                        add_action("wp_ajax_tags_all_in_one_shortcode_generator", array($this, "TagsAllInOneShortcodeGenerator") );
+        //include required files based on admin or site
+        if ( is_admin() ) {
+            /*
+            * activate plugin
+            */
+            add_action( 'init', array($this, 'tags_all_in_one_button') );
+            add_action( 'admin_head', array($this, 'tags_all_in_one_button') );
 
-                        /*
-                         * clear settings
-                         */
-                        register_deactivation_hook(__FILE__,  array($this, 'deactivation') );
-                } else {
-                        require_once("shortcode-decode.class.php");
-                } 
+            /*
+             * ajax page for shortcode generator
+             */
+            add_action( "wp_ajax_tags_all_in_one_shortcode_generator", array($this, "TagsAllInOneShortcodeGenerator") );
 
-                /*
-                 * widget
-                 */
-                require_once("tags-generator.class.php");
-                require_once("tags-widget.class.php");  
-        }          
-        
+            /*
+             * clear settings
+             */
+            register_deactivation_hook(__FILE__,  array($this, 'deactivation') );
+        } else {
+            require_once( "shortcode-decode.class.php" );
+        }
+
+        /*
+         * widget
+         */
+        require_once("tags-generator.class.php");
+        require_once("tags-widget.class.php");
+    }
+
 	/**
 	 * deactivate the plugin
 	 */
 	public function deactivation()
 	{
-                if ( ! current_user_can( 'activate_plugins' ) ) {
-                       return;            
-                }
-                delete_option( $this->plugin_slug . '_options' );
-	}       
-                
-        /**
-         * retrieves the plugin options from the database.
-         */
-        private function get_defaults() {
-                return array();
-        }    
-            
-        function TagsAllInOneShortcodeGenerator() {
-                require_once("shortcode-generator.php");
-                exit();
-        }    
-       
-        /*
-         * add button to editor
-         */
-        function tags_all_in_one_button() {
-                // check user permissions
-                if ( !current_user_can( "edit_posts" ) && !current_user_can( "edit_pages" ) ) {
-                        return;
-                }        
+        if ( ! current_user_can( 'activate_plugins' ) ) {
+           return;
+        }
+        delete_option( $this->plugin_slug . '_options' );
+	}
 
-                //adds button to the visual editor
-                add_filter("mce_external_plugins", array($this, "add_tags_all_in_one_plugin") );  
-                add_filter("mce_buttons", array($this, "register_add_tags_all_in_one_button") );  
+    /**
+     * retrieves the plugin options from the database.
+     */
+    private function get_defaults() {
+        return array();
+    }
+
+    public function TagsAllInOneShortcodeGenerator() {
+        require_once("shortcode-generator.php");
+        exit();
+    }
+
+    /*
+     * add button to editor
+     */
+    function tags_all_in_one_button() {
+        // check user permissions
+        if ( !current_user_can( "edit_posts" ) && !current_user_can( "edit_pages" ) ) {
+            return;
         }
 
-        /*
-         * callback function
-         */
-        function add_tags_all_in_one_plugin($plugin_array) {        
-                $blog_version = floatval(get_bloginfo("version"));
+        //adds button to the visual editor
+        add_filter( "mce_external_plugins", array($this, "add_tags_all_in_one_plugin") );
+        add_filter( "mce_buttons", array($this, "register_add_tags_all_in_one_button") );
+    }
 
-                if($blog_version >= 4.0) {
-                        $version = "plugin-4.0.js";
-                }else if($blog_version < 4.0 && $blog_version >= 3.9) {
-                        $version = "plugin-3.9.js";
-                } else {
-                        $version = "plugin-3.6.js";            
-                }
+    /*
+     * callback function
+     */
+    function add_tags_all_in_one_plugin( $plugin_array ) {
+        $blog_version = floatval(get_bloginfo("version"));
 
-                $plugin_array["tags_all_in_one_button"] = plugin_dir_url(__FILE__)."js/".$version;
-                return $plugin_array;
-        } 
-    
-        /* 
-         * callback function
-         */
-        function register_add_tags_all_in_one_button($buttons) {
-                array_push($buttons, "tags_all_in_one_button");
-                return $buttons;
-        } 
+        if( $blog_version >= 4.0 ) {
+            $version = "plugin-4.0.js";
+        } else if($blog_version < 4.0 && $blog_version >= 3.9 ) {
+            $version = "plugin-3.9.js";
+        } else {
+            $version = "plugin-3.6.js";
+        }
+
+        $plugin_array["tags_all_in_one_button"] = plugin_dir_url(__FILE__)."js/".$version;
+        return $plugin_array;
+    }
+
+    /*
+     * callback function
+     */
+    public function register_add_tags_all_in_one_button( $buttons ) {
+        array_push($buttons, "tags_all_in_one_button");
+        return $buttons;
+    }
 }
 
 
